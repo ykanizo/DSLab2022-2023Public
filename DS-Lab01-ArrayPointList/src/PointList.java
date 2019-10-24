@@ -11,18 +11,18 @@ public interface PointList {
 	boolean isEmpty();
 	boolean isFull();
 	
-	boolean gotoBeginning();      // If list is not empty moves the cursor to the first element of the list
+	boolean goToBeginning();      // If list is not empty moves the cursor to the first element of the list
 	                              // and returns true. Otherwise, returns false.
-	boolean gotoEnd();            // If list is not empty moves the cursor to the last element of the list
+	boolean goToEnd();            // If list is not empty moves the cursor to the last element of the list
                                   // and returns true. Otherwise, returns false.
 	
-	boolean gotoNext();           // If the cursor is not in the last element of the list, 
+	boolean goToNext();           // If the cursor is not in the last element of the list, 
 	                              // moves it to the next element and returns true. Otherwise, returns false.
-	boolean gotoPrior();          // If the cursor is not in the first element of the list, 
+	boolean goToPrior();          // If the cursor is not in the first element of the list, 
                                   // moves it to the previous element and returns true. Otherwise, returns false.
 	
 	Point getCursor();            // Returns a copy of the point marked by the cursor, and null if the list is empty
 	
-	void showStructure();         // Outputs the Points in the list. If the list is empty, outputs "Empty list".
+	String toString();         // Outputs the Points in the list. If the list is empty, outputs "Empty list".
 	                              // Intended for debugging purposes only.
 }

@@ -64,8 +64,8 @@ public class PointListTest {
 	}
 
 	@Test
-	public void testGotoBeginning() {
-		assertFalse(points3.gotoBeginning());
+	public void testGoToBeginning() {
+		assertFalse(points3.goToBeginning());
 
 		Point p1 = new Point(5, 5);
 		points3.append(p1);
@@ -74,13 +74,13 @@ public class PointListTest {
 		Point p3 = new Point(7, 7);
 		points3.append(p3);
 		
-		assertTrue(points3.gotoBeginning());
+		assertTrue(points3.goToBeginning());
 		assertEquals(p1, points3.getCursor());
 	}
 
 	@Test
-	public void testGotoEnd() {
-		assertFalse(points3.gotoEnd());
+	public void testGoToEnd() {
+		assertFalse(points3.goToEnd());
 
 		Point p1 = new Point(5, 5);
 		points3.append(p1);
@@ -89,34 +89,34 @@ public class PointListTest {
 		Point p3 = new Point(7, 7);
 		points3.append(p3);
 		
-		assertTrue(points3.gotoEnd());
+		assertTrue(points3.goToEnd());
 		assertEquals(p3, points3.getCursor());
 
 	}
 
 	@Test
-	public void testGotoNext() {
-		assertFalse(points3.gotoNext());
+	public void testGoToNext() {
+		assertFalse(points3.goToNext());
 
 		Point p1 = new Point(5, 5);
 		points3.append(p1);
-		assertFalse(points3.gotoNext());
+		assertFalse(points3.goToNext());
 		
 		Point p2 = new Point(6, 6);
 		points3.append(p2);
-		assertFalse(points3.gotoNext());
+		assertFalse(points3.goToNext());
 
 		Point p3 = new Point(7, 7);
 		points3.append(p3);
-		assertFalse(points3.gotoNext());
+		assertFalse(points3.goToNext());
 
-		assertTrue(points3.gotoBeginning());
-		assertTrue(points3.gotoNext());
+		assertTrue(points3.goToBeginning());
+		assertTrue(points3.goToNext());
 		assertEquals(p2, points3.getCursor());
 	}
 
 	@Test
-	public void testGotoPrior() {
+	public void testGoToPrior() {
 		Point p1 = new Point(5, 5);
 		points3.append(p1);
 		Point p2 = new Point(6, 6);
@@ -124,7 +124,7 @@ public class PointListTest {
 		Point p3 = new Point(7, 7);
 		points3.append(p3);
 		
-		assertTrue(points3.gotoEnd());
+		assertTrue(points3.goToEnd());
 		assertEquals(p3, points3.getCursor());
 	}
 

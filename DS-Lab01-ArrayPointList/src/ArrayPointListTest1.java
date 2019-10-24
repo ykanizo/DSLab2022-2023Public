@@ -24,11 +24,11 @@ public class ArrayPointListTest1 {
 			polygon.append(vertex);    
 		}
 		// Output the vertices one per line.
-		if (polygon.gotoBeginning()) { 
+		if (polygon.goToBeginning()) { 
 			do {       
 				vertex = polygon.getCursor();
 				System.out.println("(" + vertex.x + "," + vertex.y + ")");
-			} while (polygon.gotoNext());
+			} while (polygon.goToNext());
 		}
 	}
 
