@@ -23,6 +23,6 @@ public interface PointList {
 	
 	Point getCursor();            // Returns a copy of the point marked by the cursor, and null if the list is empty
 	
-	String toString();         // Outputs the Points in the list. If the list is empty, outputs "Empty list".
+	String toString();            // Outputs the Points in the list. If the list is empty, outputs "Empty list".
 	                              // Intended for debugging purposes only.
 }
