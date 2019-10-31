@@ -28,7 +28,7 @@ public class DiagonalMatrixTest {
 
 	@Test
 	public void testDiagonalMatrix() {
-		DiagonalMatrix d = new DiagonalMatrix();
+		Matrix d = new DiagonalMatrix();
 		assertEquals(0, d.get(1,2),0);
 		assertEquals(0, d.get(1,3),0);
 		assertEquals(0, d.get(100,100),0);
