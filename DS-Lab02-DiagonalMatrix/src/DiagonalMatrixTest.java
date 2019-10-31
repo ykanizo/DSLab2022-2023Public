@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class DiagonalMatrixTest {
-	private DiagonalMatrix d3;
+	private Matrix d3;
 	
 	@Before
 	public void setUp() throws Exception {
