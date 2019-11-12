@@ -9,6 +9,6 @@ public class TimerTest {
 		t = UtilsLab03.TimerFactory.getTimer();
 	}
 	
-	//Add @test methods 
+	//Add @Test methods 
 
 }
