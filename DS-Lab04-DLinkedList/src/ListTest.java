@@ -1,20 +1,10 @@
 import org.junit.Before;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
 
-@RunWith(Parameterized.class)
 public abstract class ListTest<T> {
 
-	@Parameter
-	public String listClassName;
 	private DListFactory<T> dListFactory = new DListFactory<T>();
 	private List<T> dList;
 
-	@Parameterized.Parameters
-	public static Iterable<String> classNames() {
-		return DListFactory.getClassNames();
-	}
 	
 	/**
 	 * @return a new instance of parameter T. Two instances which are created by
@@ -26,7 +16,7 @@ public abstract class ListTest<T> {
 
 	@Before
 	public void setUp() throws Exception {
-		dList = dListFactory.getDList(listClassName);
+		dList = dListFactory.getDList();
 		// TODO You can add your code here
 	}
 	

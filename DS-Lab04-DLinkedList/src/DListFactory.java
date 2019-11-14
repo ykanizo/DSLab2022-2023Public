@@ -1,18 +1,11 @@
-import java.util.ArrayList;
-
 public class DListFactory<T> {
 
-	public List<T> getDList(String className)
+	public List<T> getDList()
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-		Class<?> c = Class.forName(className);
+		Class<?> c = Class.forName("DLinkedList");
+		@SuppressWarnings("unchecked")
 		List<T> dlist = (List<T>) c.newInstance();
 		return dlist;
-	}
-
-	public static Iterable<String> getClassNames() {
-		ArrayList<String> result = new ArrayList<String>();
-		result.add("DLinkedList");
-		return result;
 	}
 
 }
