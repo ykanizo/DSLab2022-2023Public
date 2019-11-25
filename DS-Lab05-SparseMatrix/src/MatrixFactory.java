@@ -6,7 +6,7 @@ public class MatrixFactory<T> {
 	/**
 	 * @param size
 	 * @param defaultVal
-	 * @return an instance of Matrix<T> by applying the constructor with ont
+	 * @return an instance of Matrix<T> by applying the constructor with on
 	 *         parameter (T defaultVal)
 	 */
 	public Matrix<T> getMatrix(T defaultVal) {
