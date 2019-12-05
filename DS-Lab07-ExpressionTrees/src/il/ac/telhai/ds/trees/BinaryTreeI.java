@@ -42,7 +42,7 @@ public interface BinaryTreeI<T> {
 
 	/**
 	 * @return the height of the tree, i.e. the length of a longest path starting
-	 *         from the root
+	 *         from the root.
 	 */
 	public int height();
 
@@ -59,14 +59,14 @@ public interface BinaryTreeI<T> {
 	/**
 	 * @return the concatenation of the string representations of the data values in
 	 *         the tree traversed in preorder fashion, where adding a " " before and
-	 *         after each value in the tree.
+	 *         a " " after each value in the tree.
 	 */
 	public String preOrder();
 
 	/**
 	 * @return the concatenation of the string representations of the data values in
 	 *         the tree traversed in preorder fashion, where adding a
-	 *         "separationBeforeVal" before each value and after
+	 *         "separationBeforeVal" before each value and a
 	 *         "separationAfterVal" after each value in the tree.
 	 */
 	public String preOrder(String separationBeforeVal, String separationAfterVal);
@@ -74,14 +74,14 @@ public interface BinaryTreeI<T> {
 	/**
 	 * @return the concatenation of the string representations of the data values in
 	 *         the tree traversed in inorder fashion, where adding a " " before and
-	 *         after each value in the tree.
+	 *         a " " after each value in the tree.
 	 */
 	public String inOrder();
 
 	/**
 	 * @return the concatenation of the string representations of the data values in
 	 *         the tree traversed in inorder fashion, where adding a
-	 *         "separationBeforeVal" before each value and after
+	 *         "separationBeforeVal" before each value and a
 	 *         "separationAfterVal" after each value in the tree.
 	 */
 	public String inOrder(String separationBeforeVal, String separationAfterVal);
@@ -89,14 +89,14 @@ public interface BinaryTreeI<T> {
 	/**
 	 * @return the concatenation of the string representations of the data values in
 	 *         the tree traversed in postorder fashion, where adding a " " before
-	 *         and after each value in the tree.
+	 *         and a " " after each value in the tree.
 	 */
 	public String postOrder();
 
 	/**
 	 * @return the concatenation of the string representations of the data values in
 	 *         the tree traversed in postorder fashion, where adding a
-	 *         "separationBeforeVal" before each value and after
+	 *         "separationBeforeVal" before each value and a
 	 *         "separationAfterVal" after each value in the tree.
 	 */
 	public String postOrder(String separationBeforeVal, String separationAfterVal);
