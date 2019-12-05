@@ -2,7 +2,7 @@ package il.ac.telhai.ds.trees;
 
 import java.io.*;
 
-public class PolishToInfix {
+public class PrePolishToInfix {
 
 	public static void main(String[] args) throws IOException {
 		StreamTokenizer tokenizer = new StreamTokenizer(new InputStreamReader(System.in));
