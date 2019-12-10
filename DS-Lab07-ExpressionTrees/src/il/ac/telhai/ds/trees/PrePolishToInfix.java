@@ -14,7 +14,7 @@ public class PrePolishToInfix {
 		System.out.println("Value: " + expr.evaluate());
 		System.out.println("Heigt: " + expr.height());
 		System.out.println("Size: " + expr.size());
-		System.out.println("Size: " + expr.isLeaf());
+		System.out.println("IsLeaf: " + expr.isLeaf());
 	}
 
 }
