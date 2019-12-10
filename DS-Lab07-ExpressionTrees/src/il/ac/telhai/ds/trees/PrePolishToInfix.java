@@ -11,7 +11,10 @@ public class PrePolishToInfix {
 		ExpressionTree expr = ExpressionTree.createTree(tokenizer);
 		System.out.println("Infix: " + expr.infix());
 		System.out.println("Prefix: " + expr.prefix());
-		System.out.println("Value: "+expr.evaluate());
+		System.out.println("Value: " + expr.evaluate());
+		System.out.println("Heigt: " + expr.height());
+		System.out.println("Size: " + expr.size());
+		System.out.println("Size: " + expr.isLeaf());
 	}
 
 }
