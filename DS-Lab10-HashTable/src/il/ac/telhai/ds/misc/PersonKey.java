@@ -1,5 +1,5 @@
 package il.ac.telhai.ds.misc;
-public class PersonKey implements Comparable<PersonKey> {
+public class PersonKey {
 	private String id;
 	private String lastName;
 
@@ -8,13 +8,6 @@ public class PersonKey implements Comparable<PersonKey> {
 		this.id = id;
 		this.lastName = lastName;
 	}
-
-	@Override
-	public int compareTo(PersonKey other) {
-		int ret = lastName.compareTo(other.lastName);
-		return ret != 0 ? ret : id.compareTo(other.id);
-	}
-
 
 	@Override
 	public String toString() {
