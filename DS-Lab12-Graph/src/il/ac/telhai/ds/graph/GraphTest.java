@@ -118,7 +118,7 @@ public class GraphTest {
 	}
 
 	@Test
-	public void testIsAdjacent() {
+	public void testAreAdjacent() {
 		Graph<String, Double> p4 = createP4();
 		assertTrue(p4.areAdjacent("A", "B"));
 		assertTrue(p4.areAdjacent("B", "C"));
@@ -141,6 +141,26 @@ public class GraphTest {
 		} catch (Exception e) {
 		}
 		assertNull(p4.removeEdge("B", "C"));
+	}
+
+	@Test
+	public void testContains() {
+		Graph<String, Double> p = createP4();
+		assertTrue(p.containsVertex("A"));
+		assertTrue(p.containsVertex("B"));
+		assertTrue(p.containsVertex("C"));
+		assertTrue(p.containsVertex("D"));
+		assertFalse(p.containsVertex("E"));
+		assertFalse(p.containsVertex("F"));
+
+		Graph<Person, Friendship> fr = new Graph<Person, Friendship>();
+		Person m = new Person("012960449", "M", "S");
+		Person a = new Person("317919249", "A", "S");
+		fr.add(m);
+		fr.add(a);
+		assertTrue(fr.containsVertex(m));
+		assertTrue(fr.containsVertex(new Person("317919249", "A", "S")));
+		assertFalse(fr.containsVertex(new Person("327919249", "A", "S")));
 	}
 
 }
