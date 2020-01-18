@@ -1,62 +1,73 @@
 package il.ac.telhai.ds.graph;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-public class Graph<V, E> {
+public class Graph<V extends Comparable<V>, E> {
 
 	/**
-	 * Add a new vertex if none with equal item exists.
-	 * Otherwise retain the existing vertex and replace the item with the given one.
-	 * Note that though they are equal, they are not necessarily same.
+	 * Add a new vertex if none with equal item exists, and return null. Otherwise
+	 * retain the existing vertex incidents.
 	 */
-	public V put(V item) {
-	}
-
-	public V remove(V item) {
+	public void add(V v) {
 	}
 
 	/**
-	 * Add a new edge if none exists between the two vertices
-	 * Otherwise retain the existing edge and replace the item with the given one.
+	 * Add a new edge if none exists between the two vertices Otherwise retain the
+	 * existing edge and replace the item with the given one. If the vertices u or v
+	 * do not exist, add them to the graph.
 	 */
-	public E put(V item1, V item2, E itemEdge) {
+	public E putEdge(V u, V v, E edgeLabel) {
 	}
 
 	/**
-	 * @return The edge between the two vertices. Null if the edge does not exist
-	 * Throws an exception of one of the vertices does not exist.
+	 * @return If the graph contains the vertex v.
 	 */
-	public E get(V item1, V item2) {
+	public boolean containsVertex(V v) {
 	}
 
-	public double getWeight(V item1, V item2) {
+    /**
+     * 
+     * @return
+     */
+	public E getEdge(V u, V v) {
 	}
 
-	public boolean isAdjacent(V item1, V item2) {
-	}
-	
 	/**
-	 * @return The edge between the two vertices. Null if the edge does not exist
-	 * Throws an exception of one of the vertices does not exist.
+	 * Remove the vertex and its edges from the graph, and return its incidents. If
+	 * the vertex dosn't exit return null.
 	 */
-	public E remove(V item1, V item2) {
+	public void removeVertex(V v) {
+	}
+
+	/**
+	 * @return The label of the edge between the two vertices. Null if the edge does
+	 *         not exist Throws an exception if one of the vertices does not exist.
+	 */
+	public E removeEdge(V u, V v) {
+	}
+
+	/**
+	 * @return The weight of edge (u,v), if it exists. Otherwise return 0.
+	 */
+	public double getWeight(V u, V v) {
 	}
 
 	/**
 	 * @return The concatenation of the vertices separated by commas.
 	 */
+	@Override
 	public String toString() {
 	}
 
 	/**
-	 * @returns The concatenation of the vertices separated by newlines
-	 * Every vertex is printed with a comma separated list of its incident edges.
-	 * The list is separated from the vertex with a colon.
+	 * @returns The concatenation of the vertices separated by newlines Every vertex
+	 *          is printed with a comma separated list of its incident edges. The
+	 *          list is separated from the vertex with a colon.
 	 */
 	public String toStringExtended() {
 	}
 
+	/**
+	 * @return whether or not the edge (u,v) exists.
+	 */
+	public boolean areAdjacent(V u, V v) {
+	}
 }
