@@ -153,7 +153,7 @@ public class GraphTest {
 		assertFalse(p.containsVertex("E"));
 		assertFalse(p.containsVertex("F"));
 
-		Graph<Person, Friendship> fr = new Graph<Person, Friendship>();
+		Graph<Person, WeightedFriendship> fr = new Graph<Person, WeightedFriendship>();
 		Person m = new Person("012960449", "M", "S");
 		Person a = new Person("317919249", "A", "S");
 		fr.add(m);
