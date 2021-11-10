@@ -1,5 +1,8 @@
 public interface List<T> {
 
+	// In all the methods - the precondition is checked,
+	// and a runtime exception is thrown if this condition is not satisfied.
+
 	// Precondition: newElement is not null.
 	// Postcondition: Inserts newElement into the list. If the list is not empty,
 	// then inserts newElement after the cursor. Otherwise, inserts newElement as
@@ -64,11 +67,13 @@ public interface List<T> {
 	// Precondition: NONE
 	// Postcondition: If the cursor is not at the end of the list then returns true.
 	// Otherwise, returns false.
+	// If the list is empty returns false.
 	boolean hasNext();
 
 	// Precondition: NONE.
 	// Postcondition: If the cursor is not at the beginning of the list then returns
 	// true. Otherwise, returns false.
+	// If the list is empty returns false.
 	boolean hasPrev();
 
 }

@@ -34,6 +34,14 @@ public abstract class ListTest<T> {
 		newInstance3 = getParameterInstance();
 	}
 
+	/**
+	 * @return a new instance of parameter T. Two instances which are created by
+	 *         this method should be different according to "equals" method. For
+	 *         example for T=Object, the implementation can be "return new
+	 *         Object();".
+	 */
+
+
 	@Test
 	public void testGetParameterInstance() {
 		if ((newInstance1.equals(newInstance2)) || (newInstance1.equals(newInstance3))
@@ -43,7 +51,22 @@ public abstract class ListTest<T> {
 	}
 
 	@Test
-	public void testInsert() {
+	public void testIsEmpty() {
+		assertTrue(dList.isEmpty());
+		dList.insert(newInstance1);
+		assertFalse(dList.isEmpty());
+		dList.insert(newInstance2);
+		assertFalse(dList.isEmpty());
+		dList.clear();
+		assertTrue(dList.isEmpty());
+		dList.insert(newInstance2);
+		assertFalse(dList.isEmpty());
+		dList.remove(newInstance2);
+		assertTrue(dList.isEmpty());
+	}
+
+	@Test
+	public void testInsert1() {
 		try {
 			dList.insert(null);
 			fail("Should not work");
@@ -51,6 +74,83 @@ public abstract class ListTest<T> {
 		}
 		dList.insert(newInstance1);
 		assertEquals(newInstance1, dList.getCursor());
+	}
+
+	@Test
+	public void testInsert2() {
+		dList.insert(newInstance1);
+		assertEquals(newInstance1, dList.getCursor());
+
+		dList.insert(newInstance2);
+		assertEquals(newInstance2, dList.getCursor());
+
+		dList.goToBeginning();
+		dList.insert(newInstance3);
+		assertEquals(newInstance3, dList.getCursor());
+		assertEquals(newInstance2, dList.getNext());
+	}
+
+	@Test
+	public void testRemove() {
+		testRemove(newInstance1);
+		testRemove(newInstance1, newInstance2, newInstance3);
+	}
+
+	private void testRemove(T newInstance1) {
+		T deleted = dList.remove();
+		assertNull(deleted);
+
+		deleted = dList.remove(newInstance1);
+		assertNull(deleted);
+
+		dList.insert(newInstance1);
+		deleted = dList.remove();
+		assertEquals(newInstance1, deleted);
+
+		assertTrue(dList.isEmpty());
+	}
+
+	private void testRemove(T newInstance1, T newInstance2, T newInstance3) {
+		T deleted;
+
+		dList.insert(newInstance1);
+		dList.insert(newInstance2);
+		dList.insert(newInstance3);
+		T prev = dList.getPrev();
+		assertEquals(newInstance2, prev);
+		deleted = dList.remove();
+		assertEquals(newInstance3, dList.getCursor());
+		assertEquals(newInstance2, deleted);
+		deleted = dList.remove(newInstance2);
+		assertNull(deleted);
+		dList.insert(newInstance2);
+		deleted = dList.remove(newInstance1);
+		assertEquals(newInstance1, deleted);
+		deleted = dList.remove();
+		assertEquals(newInstance3, deleted);
+		deleted = dList.remove();
+		assertEquals(newInstance2, deleted);
+		assertTrue(dList.isEmpty());
+	}
+
+	@Test
+	public void testClear() {
+		dList.clear();
+		assertTrue(dList.isEmpty());
+
+		dList.insert(newInstance1);
+		dList.insert(newInstance2);
+		dList.insert(newInstance3);
+		assertFalse(dList.isEmpty());
+		dList.clear();
+		assertTrue(dList.isEmpty());
+
+		dList.insert(newInstance3);
+		assertFalse(dList.isEmpty());
+		assertEquals(dList.getCursor(), newInstance3);
+		dList.clear();
+		assertTrue(dList.isEmpty());
+		assertNull(dList.getCursor());
 	}
 
 	@Test
@@ -154,18 +254,9 @@ public abstract class ListTest<T> {
 	}
 
 	@Test
-	public void testRemove() {
-		// TODO Implement this test
+	public void testHasNextAndPrev() {
+		//TODO Add tests for HasNext and HasPrev methods.
 	}
 
-	@Test
-	public void testIsEmpty() {
-		// TODO Implement this test
-	}
-
-	@Test
-	public void testClear() {
-		// TODO Implement this test
-	}
 
 }
