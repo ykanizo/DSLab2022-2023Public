@@ -21,7 +21,8 @@ public interface Matrix<T> {
 	void set(int row, int col, T element);
 
 	/**
-	 * Transpose the matrix.
+	 * Transpose the matrix. 
+	 * Bonus of 5 points will be given for implementation in O(1).
 	 */
 	void transpose();
 
