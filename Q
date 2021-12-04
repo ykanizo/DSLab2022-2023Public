@@ -1,0 +1,17 @@
+updarte
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .DS_Store
+#	renamed:    DS-Lab07-ExpressionTrees/.classpath -> DS-Lab06-ExpressionTrees/.classpath
+#	renamed:    DS-Lab07-ExpressionTrees/.gitignore -> DS-Lab06-ExpressionTrees/.gitignore
+#	renamed:    DS-Lab07-ExpressionTrees/.project -> DS-Lab06-ExpressionTrees/.project
+#	renamed:    DS-Lab07-ExpressionTrees/.settings/org.eclipse.jdt.core.prefs -> DS-Lab06-ExpressionTrees/.settings/org.eclipse.jdt.core.prefs
+#	renamed:    DS-Lab07-ExpressionTrees/src/il/ac/telhai/ds/trees/BinaryTreeI.java -> DS-Lab06-ExpressionTrees/src/il/ac/telhai/ds/trees/BinaryTreeI.java
+#	renamed:    DS-Lab07-ExpressionTrees/src/il/ac/telhai/ds/trees/PrePolishToInfix.java -> DS-Lab06-ExpressionTrees/src/il/ac/telhai/ds/trees/PrePolishToInfix.java
+#	renamed:    DS-Lab07-ExpressionTrees/src/il/ac/telhai/ds/trees/TestBinaryTree.java -> DS-Lab06-ExpressionTrees/src/il/ac/telhai/ds/trees/TestBinaryTree.java
+#
