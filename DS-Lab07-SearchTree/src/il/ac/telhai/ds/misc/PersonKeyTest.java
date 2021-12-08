@@ -8,10 +8,10 @@ public class PersonKeyTest {
 
 	@Test
 	public void testCompareTo() {
-		PersonKey k1 = new PersonKey("12960449", "Shalom");
-		PersonKey k2 = new PersonKey("312396120", "Shalom");
-		PersonKey k3 = new PersonKey("12313122", "Berkel");
-		PersonKey k4 = new PersonKey("12960449", "Shalom");
+		PersonKey k1 = new PersonKey("12960449", "Horovitz");
+		PersonKey k2 = new PersonKey("312396120", "Horovitz");
+		PersonKey k3 = new PersonKey("12313122", "Efrat");
+		PersonKey k4 = new PersonKey("12960449", "Horovitz");
 		assertTrue(k1.compareTo(k1)==0);
 		assertTrue(k1.compareTo(k2)<0);
 		assertTrue(k1.compareTo(k3)>0);
