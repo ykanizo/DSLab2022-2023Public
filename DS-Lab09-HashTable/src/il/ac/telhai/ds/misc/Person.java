@@ -1,5 +1,7 @@
 package il.ac.telhai.ds.misc;
 
+import java.util.Objects;
+
 public class Person {
 	String id;
 	String firstName;
@@ -32,14 +34,9 @@ public class Person {
 		this.lastName = lastName;
 	}
 
-	public PersonKey getKey() {
-		return new PersonKey(getId(), getLastName());
-	}
-
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
-	
 
 }

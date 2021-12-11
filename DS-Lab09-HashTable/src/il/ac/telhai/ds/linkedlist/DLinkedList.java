@@ -130,7 +130,6 @@ public class DLinkedList<T> implements List<T> {
 
 	@Override
 	public void replace(T newElement) {
-		// current.element = newElement;
 		if ((newElement == null)) {
 			throw new IllegalArgumentException("New element is null");
 		}

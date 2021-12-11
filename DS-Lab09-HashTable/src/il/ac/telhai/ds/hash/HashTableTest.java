@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import il.ac.telhai.ds.misc.Person;
-import il.ac.telhai.ds.misc.PersonKey;
 
 public class HashTableTest {
 
@@ -16,7 +15,7 @@ public class HashTableTest {
 	private Person p7;
 	private Person p10;
 	private Person p15;
-	private HashTable<PersonKey, Person> hashPerson;
+	private HashTable<Person> hashPerson;
 
 	@Before
 	public void setUp() throws Exception {
@@ -26,46 +25,55 @@ public class HashTableTest {
 		p3 = new Person("03", "03firstName", "03lastName");
 		p7 = new Person("07", "07firstName", "07lastName");
 		p15 = new Person("15", "15firstName", "15lastName");
-		hashPerson = new HashTable<PersonKey, Person>();
+		hashPerson = new HashTable<Person>();
 	}
 	
 	@Test
-	public void testGet() {
-		hashPerson.put(p5.getKey(), p5);
-		assertEquals(p5, hashPerson.get(p5.getKey()));
-		hashPerson.put(p1.getKey(), p1);
-		assertEquals(p1, hashPerson.get(p1.getKey()));
-		hashPerson.put(p3.getKey(), p3);
-		hashPerson.put(p7.getKey(), p7);
-		hashPerson.put(p15.getKey(), p15);
-		assertEquals(p3, hashPerson.get(p3.getKey()));
-		assertEquals(p7, hashPerson.get(p7.getKey()));
-		assertEquals(p15, hashPerson.get(p15.getKey()));
-		assertNotEquals(p15, hashPerson.get(p5.getKey()));
-		assertNull(hashPerson.get(p10.getKey()));
+	public void testAddContains() {
+		assertTrue(hashPerson.add(p5));
+		assertFalse(hashPerson.add(p5));
+		assertTrue(hashPerson.contains(p5));
+		assertTrue(hashPerson.contains(new Person("05", "05firstName", "05lastName")));
+		assertFalse(hashPerson.contains(new Person("05", "", "")));
+		assertFalse(hashPerson.contains(p1));
+		assertTrue(hashPerson.add(p1));
+		assertTrue(hashPerson.contains(p1));
+		assertTrue(hashPerson.add(p3));
+		assertTrue(hashPerson.add(p7));
+		assertTrue(hashPerson.add(p15));
+		assertTrue(hashPerson.contains(p3));
+		assertTrue(hashPerson.contains(p7));
+		assertTrue(hashPerson.contains(p15));
+		assertFalse(hashPerson.contains(p10));
+		
+		assertFalse(hashPerson.add(p1));
+		assertFalse(hashPerson.add(p3));
+		assertFalse(hashPerson.add(p7));
+		assertFalse(hashPerson.add(p15));
 	}
 
 	@Test
 	public void testRemove() {
-		hashPerson.put(p5.getKey(), p5);
-		hashPerson.put(p1.getKey(), p1);
-		hashPerson.put(p3.getKey(), p3);
-		hashPerson.put(p7.getKey(), p7);
-		hashPerson.put(p15.getKey(), p15);
-		assertEquals(p15, hashPerson.get(p15.getKey()));
-		assertNull(hashPerson.remove(p10.getKey()));
-		assertEquals(p5, hashPerson.remove(p5.getKey()));
-		assertNull(hashPerson.get(p5.getKey()));
-		assertNull(hashPerson.remove(p5.getKey()));
+		hashPerson.add(p5);
+		hashPerson.add(p1);
+		hashPerson.add(p3);
+		hashPerson.add(p7);
+		hashPerson.add(p15);
+		assertTrue(hashPerson.remove(p15));
+		assertFalse(hashPerson.remove(p10));
+		assertTrue(hashPerson.remove(p1));
+		assertTrue(hashPerson.remove(p5));
+		assertFalse(hashPerson.remove(p5));
+		assertFalse(hashPerson.remove(p1));
 	}
 
 	@Test
 	public void testClear() {
-		hashPerson.put(p5.getKey(), p5);
-		hashPerson.put(p1.getKey(), p1);
-		hashPerson.put(p3.getKey(), p3);
-		hashPerson.put(p7.getKey(), p7);
-		hashPerson.put(p15.getKey(), p15);
+		hashPerson.add(p5);
+		hashPerson.add(p1);
+		hashPerson.add(p3);
+		hashPerson.add(p7);
+		hashPerson.add(p15);
 		assertFalse(hashPerson.isEmpty());
 		hashPerson.clear();
 		assertTrue(hashPerson.isEmpty());
@@ -74,8 +82,10 @@ public class HashTableTest {
 	@Test
 	public void testIsEmpty() {
 		assertTrue(hashPerson.isEmpty());
-		hashPerson.put(p1.getKey(), p1);
+		hashPerson.add(p1);
 		assertFalse(hashPerson.isEmpty());
+		hashPerson.remove(p1);
+		assertTrue(hashPerson.isEmpty());
 	}
 
 }
