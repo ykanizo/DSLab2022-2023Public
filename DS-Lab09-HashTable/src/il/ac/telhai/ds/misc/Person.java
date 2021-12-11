@@ -1,7 +1,5 @@
 package il.ac.telhai.ds.misc;
 
-import java.util.Objects;
-
 public class Person {
 	String id;
 	String firstName;
