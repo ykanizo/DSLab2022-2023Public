@@ -6,14 +6,14 @@ import org.junit.Test;
 
 public class TestAVLTree {
 
-	AVLTree<Integer, String> avlTree;
+	AVLTree<Integer> avlTree;
 
 	@Test
 	public void buildAVLTree() {
-		AVLTree<Integer, String> avlTree = new AVLTree<Integer, String>(11, "11");
+		AVLTree<Integer> avlTree = new AVLTree<Integer>(11);
 		for (int i = 0; i < 10; i++) {
 			int k = 2 * i;
-			avlTree = avlTree.add(k, String.valueOf(k));
+			avlTree = avlTree.add(k);
 		}
 
 		String s = inOrder(avlTree);
@@ -21,24 +21,24 @@ public class TestAVLTree {
 		checkTreeStructure(avlTree);
 	}
 
-	private void checkTreeStructure(AVLTree<Integer, String> avlTree) {
-		assertEquals(avlTree.getValue(), "6");
+	private void checkTreeStructure(AVLTree<Integer> avlTree) {
+		assertEquals(avlTree.getValue(), Integer.valueOf(6));
 
-		assertEquals(avlTree.getLeft().getValue(), "2");
-		assertEquals(avlTree.getRight().getValue(), "12");
+		assertEquals(avlTree.getLeft().getValue(), Integer.valueOf(2));
+		assertEquals(avlTree.getRight().getValue(), Integer.valueOf(12));
 
-		assertEquals(avlTree.getLeft().getLeft().getValue(), "0");
-		assertEquals(avlTree.getLeft().getRight().getValue(), "4");
-		assertEquals(avlTree.getRight().getLeft().getValue(), "10");
-		assertEquals(avlTree.getRight().getRight().getValue(), "16");
+		assertEquals(avlTree.getLeft().getLeft().getValue(), Integer.valueOf(0));
+		assertEquals(avlTree.getLeft().getRight().getValue(), Integer.valueOf(4));
+		assertEquals(avlTree.getRight().getLeft().getValue(), Integer.valueOf(10));
+		assertEquals(avlTree.getRight().getRight().getValue(), Integer.valueOf(16));
 
-		assertEquals(avlTree.getRight().getLeft().getLeft().getValue(), "8");
-		assertEquals(avlTree.getRight().getLeft().getRight().getValue(), "11");
-		assertEquals(avlTree.getRight().getRight().getLeft().getValue(), "14");
-		assertEquals(avlTree.getRight().getRight().getRight().getValue(), "18");
+		assertEquals(avlTree.getRight().getLeft().getLeft().getValue(),  Integer.valueOf(8));
+		assertEquals(avlTree.getRight().getLeft().getRight().getValue(), Integer.valueOf(11));
+		assertEquals(avlTree.getRight().getRight().getLeft().getValue(), Integer.valueOf(14));
+		assertEquals(avlTree.getRight().getRight().getRight().getValue(), Integer.valueOf(18));
 	}
 
-	private String inOrder(AVLTree<Integer, String> tree) {
+	private String inOrder(AVLTree<Integer> tree) {
 		StringBuilder sb = new StringBuilder();
 
 		if (tree.getLeft() != null) {
@@ -55,39 +55,39 @@ public class TestAVLTree {
 
 	@Test
 	public void testSingleRotateLeft() {
-		AVLTree<Integer, String> tree = new AVLTree<Integer, String>(0, "0");
-		tree = tree.add(10, "10");
-		tree = tree.add(20, "20");
+		AVLTree<Integer> tree = new AVLTree<Integer>(0);
+		tree = tree.add(10);
+		tree = tree.add(20);
 		testTree(tree);
 	}
 
 	@Test
 	public void testSingleRotateRight() {
-		AVLTree<Integer, String> tree = new AVLTree<Integer, String>(20, "20");
-		tree = tree.add(10, "10");
-		tree = tree.add(0, "0");
+		AVLTree<Integer> tree = new AVLTree<Integer>(20);
+		tree = tree.add(10);
+		tree = tree.add(0);
 		testTree(tree);
 	}
 
 	@Test
 	public void testDoubleRotateLeftRight() {
-		AVLTree<Integer, String> tree = new AVLTree<Integer, String>(20, "20");
-		tree = tree.add(0, "0");
-		tree = tree.add(10, "10");
+		AVLTree<Integer> tree = new AVLTree<Integer>(20);
+		tree = tree.add(0);
+		tree = tree.add(10);
 		testTree(tree);
 	}
 
 	@Test
 	public void testDoubleRotateRightLeft() {
-		AVLTree<Integer, String> tree = new AVLTree<Integer, String>(10, "10");
-		tree = tree.add(20, "20");
-		tree = tree.add(0, "0");
+		AVLTree<Integer> tree = new AVLTree<Integer>(10);
+		tree = tree.add(20);
+		tree = tree.add(0);
 		testTree(tree);
 	}
 
-	private void testTree(AVLTree<Integer, String> tree) {
-		assertEquals(tree.getValue(), "10");
-		assertEquals(tree.getLeft().getValue(), "0");
-		assertEquals(tree.getRight().getValue(), "20");
+	private void testTree(AVLTree<Integer> tree) {
+		assertEquals(tree.getValue(), Integer.valueOf(10));
+		assertEquals(tree.getLeft().getValue(), Integer.valueOf(0));
+		assertEquals(tree.getRight().getValue(), Integer.valueOf(20));
 	}
 }
