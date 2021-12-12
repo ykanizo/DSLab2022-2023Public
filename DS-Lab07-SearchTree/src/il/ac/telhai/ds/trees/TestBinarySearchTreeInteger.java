@@ -99,9 +99,26 @@ public class TestBinarySearchTreeInteger {
 		assertTrue(tree.contains(3));
 		tree.remove(3);
 		assertFalse(tree.contains(3));
-
+		
+		
 		assertEquals(tree.findLE(3), Integer.valueOf(2));
+		assertEquals(tree.findGE(3), Integer.valueOf(4));
+		
+		tree.remove(4);
+		tree.remove(5);
+		tree.add(3);
+		assertEquals(tree.findLE(4), Integer.valueOf(3));
+		assertEquals(tree.findGE(4), Integer.valueOf(6));
+		
+		
+		tree.add(4);
+		assertEquals(tree.findLE(4), Integer.valueOf(4));
+		assertEquals(tree.findGE(4), Integer.valueOf(4));
+		assertEquals(tree.findLE(5), Integer.valueOf(4));
+		assertEquals(tree.findGE(5), Integer.valueOf(6));
+		
 		assertEquals(tree.findGE(0), Integer.valueOf(1));
+		
 		assertNull(tree.findLE(0));
 		assertNull(tree.findGE(7));
 	}
