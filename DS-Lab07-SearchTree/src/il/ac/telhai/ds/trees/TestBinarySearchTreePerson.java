@@ -147,10 +147,9 @@ public class TestBinarySearchTreePerson {
 
 	@Test
 	public void testRemoveExistingLeaf() {
-		assertEquals(treePerson.remove(new Person("03", "03firstName", "03lastName")),
-				new Person("03", "03firstName", "03lastName"));
+		assertTrue(treePerson.remove(new Person("03", "03firstName", "03lastName")));
 		assertEquals(5, treePerson.size());
-		assertNull(treePerson.remove(p3));
+		assertFalse(treePerson.remove(p3));
 		assertFalse(treePerson.contains(p3));
 	}
 
@@ -160,7 +159,7 @@ public class TestBinarySearchTreePerson {
 		Person p8 = new Person("08", "08firstName", "08lastName");
 		treePerson.add(p8);
 		assertEquals(treePerson.getLeft().getRight().getRight().getValue(), p8);
-		assertEquals(treePerson.remove(p7), p7);
+		assertTrue(treePerson.remove(p7));
 		assertEquals(treePerson.getLeft().getRight().getValue(), p8);
 	}
 
@@ -169,7 +168,7 @@ public class TestBinarySearchTreePerson {
 		Person p6 = new Person("06", "06firstName", "06lastName");
 		treePerson.add(p6);
 		assertEquals(treePerson.getLeft().getRight().getLeft().getValue(), p6);
-		assertEquals(treePerson.remove(p7), p7);
+		assertTrue(treePerson.remove(p7));
 		assertEquals(treePerson.getLeft().getRight().getValue(), p6);
 	}
 
@@ -189,7 +188,7 @@ public class TestBinarySearchTreePerson {
 		assertEquals(treePerson.getLeft().getRight().getLeft().getValue(), p6);
 		assertEquals(treePerson.getLeft().getRight().getLeft().getValue(), p6);
 		
-		assertEquals(treePerson.remove(p7), p7);
+		assertTrue(treePerson.remove(p7));
 		assertEquals(treePerson.size(),8);
 		isSearchTree(treePerson);
 		
@@ -222,9 +221,5 @@ public class TestBinarySearchTreePerson {
 		return true;
 
 	}
-
-
-
-
 
 }
