@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import il.ac.telhai.ds.misc.Person;
 
-public class HeapTest {
+public class MinHeapTest {
 
 	Integer[] arr = {10,9,8,7,6,5,4,3,2,1};
 	
@@ -17,7 +17,7 @@ public class HeapTest {
 
 	@Test
 	public void testHeapInt() {
-		Heap<Integer> heap = new Heap<Integer>(5);
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		assertEquals("[]", heap.toString());
 	}
 
@@ -25,7 +25,7 @@ public class HeapTest {
 	public void testHeapPerson() {
 		Person p1 = new Person("123456789", "One", "One");
 		Person p2 = new Person("234567891", "One", "One");
-		Heap<Person> heap = new Heap<Person>(5);
+		MinHeap<Person> heap = new MinHeap<Person>(5);
 		heap.insert(p1);
 		heap.insert(p2);
 		assertSame(p1, heap.deleteMin());
@@ -33,13 +33,13 @@ public class HeapTest {
 	
 	@Test
 	public void testHeapTArray() {
-		Heap<Integer> heap = new Heap<Integer>(arr);
+		MinHeap<Integer> heap = new MinHeap<Integer>(arr);
 		assertEquals("[1,2,4,3,6,5,8,10,7,9]", heap.toString());
 	}
 
 	@Test
 	public void testIsFull() {
-		Heap<Integer> heap = new Heap<Integer>(2);
+		MinHeap<Integer> heap = new MinHeap<Integer>(2);
 		assertFalse(heap.isFull());
 		heap.insert(7);
 		assertFalse(heap.isFull());
@@ -51,7 +51,7 @@ public class HeapTest {
 
 	@Test
 	public void testIsEmpty() {
-		Heap<Integer> heap = new Heap<Integer>(5);
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		assertTrue(heap.isEmpty());
 		heap.insert(7);
 		assertFalse(heap.isEmpty());
@@ -59,14 +59,14 @@ public class HeapTest {
 
 	@Test
 	public void testInsertSingle() {
-		Heap<Integer> heap = new Heap<Integer>(5);
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		heap.insert(10);
 		assertEquals("[10]", heap.toString());
 	}
 
 	@Test
 	public void testInsertTwoNoFlip() {
-		Heap<Integer> heap = new Heap<Integer>(5);
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		heap.insert(10);
 		heap.insert(15);
 		assertEquals("[10,15]", heap.toString());
@@ -74,7 +74,7 @@ public class HeapTest {
 
 	@Test
 	public void testInsertTwoWithFlip() {
-		Heap<Integer> heap = new Heap<Integer>(5);
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		heap.insert(15);
 		heap.insert(10);
 		assertEquals("[10,15]", heap.toString());
@@ -82,7 +82,7 @@ public class HeapTest {
 
 	@Test
 	public void testInsertThree() {
-		Heap<Integer> heap = new Heap<Integer>(5);
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		heap.insert(10);
 		heap.insert(15);
 		heap.insert(5);
@@ -91,7 +91,7 @@ public class HeapTest {
 
 	@Test
 	public void testInsertTooMuch() {
-		Heap<Integer> heap = new Heap<Integer>(2);
+		MinHeap<Integer> heap = new MinHeap<Integer>(2);
 		heap.insert(1);
 		heap.insert(2);
 		try {
@@ -104,7 +104,7 @@ public class HeapTest {
 
 	@Test
 	public void testInsertTen() {
-		Heap<Integer> heap = new Heap<Integer>(arr.length);
+		MinHeap<Integer> heap = new MinHeap<Integer>(arr.length);
 		for (Integer i : arr) {
 			heap.insert(i);		
 		}
@@ -114,7 +114,7 @@ public class HeapTest {
 	
 	@Test
 	public void testGetMin() {
-		Heap<Integer> heap = new Heap<Integer>(5);
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		try {
 			heap.getMin();
 		    fail("Should throw exception");
@@ -131,7 +131,7 @@ public class HeapTest {
 
 	@Test
 	public void testDeleteMinSimple() {
-		Heap<Integer> heap = new Heap<Integer>(5);
+		MinHeap<Integer> heap = new MinHeap<Integer>(5);
 		heap.insert(10);
 		heap.insert(15);
 		heap.insert(5);
@@ -147,7 +147,7 @@ public class HeapTest {
 
 	@Test
 	public void testDeleteMinComplex() {
-		Heap<Integer> heap = new Heap<Integer>(arr);
+		MinHeap<Integer> heap = new MinHeap<Integer>(arr);
 		assertEquals("[1,2,4,3,6,5,8,10,7,9]", heap.toString());
 		assertEquals(new Integer(1), heap.deleteMin());
 		assertEquals("[2,3,4,7,6,5,8,10,9]", heap.toString());

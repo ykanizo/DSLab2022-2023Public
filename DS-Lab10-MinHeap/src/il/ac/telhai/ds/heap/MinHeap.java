@@ -1,12 +1,12 @@
 package il.ac.telhai.ds.heap;
 
-public class Heap<T extends Comparable<T>> {
+public class MinHeap<T extends Comparable<T>> {
 
-	public Heap(int length) {
+	public MinHeap(int length) {
 		// TODO add your implementation here
 	}
 
-	public Heap(T[] arr) {
+	public MinHeap(T[] arr) {
 		// TODO add your implementation here
 	}
 
