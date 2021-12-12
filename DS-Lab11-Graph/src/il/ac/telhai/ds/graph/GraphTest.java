@@ -17,7 +17,7 @@ import il.ac.telhai.ds.misc.WeightedFriendship;
 
 public class GraphTest {
 
-	Graph<String, Double> g;
+	IGraph<String, Double> g;
 
 	@Before
 	public void setUp() throws Exception {
@@ -62,8 +62,8 @@ public class GraphTest {
 				g.toStringExtended());
 	}
 
-	private Graph<String, Double> createP4() {
-		Graph<String, Double> p4 = new Graph<String, Double>();
+	private IGraph<String, Double> createP4() {
+		IGraph<String, Double> p4 = new Graph<String, Double>();
 		p4.add("A");
 		p4.add("B");
 		p4.add("C");
@@ -76,7 +76,7 @@ public class GraphTest {
 
 	@Test
 	public void testFriendship() {
-		Graph<Person, Friendship> fr = new Graph<Person, Friendship>();
+		IGraph<Person, Friendship> fr = new Graph<Person, Friendship>();
 		Person m = new Person("012960449", "M", "S");
 		Person a = new Person("317919249", "A", "S");
 		fr.add(m);
@@ -94,7 +94,7 @@ public class GraphTest {
 
 	@Test
 	public void testWeightedFriendship() {
-		Graph<Person, WeightedFriendship> fr = new Graph<Person, WeightedFriendship>();
+		IGraph<Person, WeightedFriendship> fr = new Graph<Person, WeightedFriendship>();
 		Person m = new Person("012960449", "M", "S");
 		Person a = new Person("317919249", "A", "S");
 		fr.add(m);
@@ -105,21 +105,21 @@ public class GraphTest {
 
 	@Test
 	public void testGet() {
-		Graph<String, Double> p4 = createP4();
+		IGraph<String, Double> p4 = createP4();
 		assertEquals(2.5, p4.getEdge("A", "B"), 0);
 		assertNull(p4.getEdge("A", "C"));
 	}
 
 	@Test
 	public void testGetWeightSimple() {
-		Graph<String, Double> p4 = createP4();
+		IGraph<String, Double> p4 = createP4();
 		assertEquals(2.5, p4.getWeight("A", "B"), 0);
 		assertEquals(0, p4.getWeight("A", "C"), 0);
 	}
 
 	@Test
 	public void testAreAdjacent() {
-		Graph<String, Double> p4 = createP4();
+		IGraph<String, Double> p4 = createP4();
 		assertTrue(p4.areAdjacent("A", "B"));
 		assertTrue(p4.areAdjacent("B", "C"));
 		assertTrue(p4.areAdjacent("C", "D"));
@@ -131,7 +131,7 @@ public class GraphTest {
 
 	@Test
 	public void testRemoveEdge() {
-		Graph<String, Double> p4 = createP4();
+		IGraph<String, Double> p4 = createP4();
 		p4.removeEdge("B", "C");
 		assertEquals("A:{A,B}(2.5)\nB:{A,B}(2.5)\nC:{C,D}(4.5)\nD:{C,D}(4.5)", p4.toStringExtended());
 		try {
@@ -145,7 +145,7 @@ public class GraphTest {
 
 	@Test
 	public void testContains() {
-		Graph<String, Double> p = createP4();
+		IGraph<String, Double> p = createP4();
 		assertTrue(p.containsVertex("A"));
 		assertTrue(p.containsVertex("B"));
 		assertTrue(p.containsVertex("C"));
@@ -153,7 +153,7 @@ public class GraphTest {
 		assertFalse(p.containsVertex("E"));
 		assertFalse(p.containsVertex("F"));
 
-		Graph<Person, WeightedFriendship> fr = new Graph<Person, WeightedFriendship>();
+		IGraph<Person, WeightedFriendship> fr = new Graph<Person, WeightedFriendship>();
 		Person m = new Person("012960449", "M", "S");
 		Person a = new Person("317919249", "A", "S");
 		fr.add(m);
