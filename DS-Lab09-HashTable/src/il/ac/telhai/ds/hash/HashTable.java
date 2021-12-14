@@ -58,7 +58,7 @@ public class HashTable<V> {
 	}
 
 	/**
-	 * @return true if the hase-table is empty, otherwise return false.
+	 * @return true if the hash-table is empty, otherwise return false.
 	 */
 	public boolean isEmpty() {
 		// TODO add your implementation.
