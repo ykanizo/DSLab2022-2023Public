@@ -42,7 +42,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
 	}
 
 	/**
-	 * Looks for the minimal object in the tree, which is smaller than or equal to
+	 * Looks for the maximal object in the tree, which is smaller than or equal to
 	 * the parameter.
 	 * 
 	 * @param val: the object to be looked for in the tree
@@ -55,7 +55,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
 	/**
 	 * Removes the object in the tree which is equal to the parameter. If the object
 	 * was found but the tree contains only one element, it want be removed and a
-	 * run-time exception will be thrown. Nothing is done if node found
+	 * run-time exception will be thrown. Nothing is done if not found
 	 * 
 	 * @param val: the object to be looked for in the tree
 	 * @return True, if the element was removed. Otherwise false.
