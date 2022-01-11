@@ -3,11 +3,10 @@ package il.ac.telhai.ds.graph;
 public interface IGraph<V extends Comparable<V>, E> {
 
 	/**
-	 * Add a new vertex if none with equal item exists, and return null. Otherwise
-	 * retain the existing vertex incidents.
+	 * Add a new vertex if none exists.
 	 */
 	public void add(V v);
-	
+
 	/**
 	 * @param u
 	 * @param v
@@ -55,7 +54,7 @@ public interface IGraph<V extends Comparable<V>, E> {
 	 *          list is separated from the vertex with a colon.
 	 */
 	public String toStringExtended();
-	
+
 	/**
 	 * @return If the the edge (u,v) exists.
 	 */

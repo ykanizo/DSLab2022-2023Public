@@ -4,15 +4,15 @@ public class HashTable<V> {
 	public static final int DEF_MAX_HASH_SIZE = 10;
 
 	/**
-	 * c'tor
-	 * construct a hash-table of max-size "DEF_MAX_HASH_SIZE".
+	 * constructor
+	 * constructs a hash-table of max-size "DEF_MAX_HASH_SIZE".
 	 */
 	public HashTable() {
 		// TODO add your implementation.
 	}
 	
 	/**
-	 * construct a hash-table of size 'hashSize'.
+	 * constructs a hash-table of size 'hashSize'.
 	 * @param hashSize, the size of the constructed hash-table.
 	 */
 	public HashTable (int hashSize) {
@@ -31,7 +31,7 @@ public class HashTable<V> {
 	 * Add val to the hash-table.
 	 * 
 	 * @param val
-	 * @return If the val has already exist in the the hash-table, it will not be
+	 * @return If the val has already existed in the the hash-table, it will not be
 	 *         added again. Return true if the val was added successfully. Otherwise
 	 *         return false.
 	 */
@@ -51,7 +51,7 @@ public class HashTable<V> {
 	}
 
 	/**
-	 * clear al the data in the hash-table
+	 * clear all the data in the hash-table
 	 */
 	public void clear() {
 		// TODO add your implementation.
