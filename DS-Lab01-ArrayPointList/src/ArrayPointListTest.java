@@ -1,7 +1,7 @@
 import java.io.*;
 import java.awt.Point;
 
-public class ArrayPointListTest1 {
+public class ArrayPointListTest {
 
 	public static void main(String args[]) throws IOException {
 		PointList polygon = new ArrayPointList();  		// Set of vertices for a polygon
