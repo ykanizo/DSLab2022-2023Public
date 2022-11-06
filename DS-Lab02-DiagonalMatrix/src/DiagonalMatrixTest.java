@@ -91,6 +91,12 @@ public class DiagonalMatrixTest {
 		assertEquals(11, m.get(3, 2), 0);
 		assertEquals(11, m.get(2, 1), 0);
 		assertEquals(0, m.get(1, 2), 0);
+		
+		Matrix m2 = m.getTranspose();
+		assertEquals(7, m2.get(1, 1), 0);
+		assertEquals(7, m2.get(2, 2), 0);
+		assertEquals(11, m2.get(2, 3), 0);
+		assertEquals(11, m2.get(1, 2), 0);
 	}
 
 	@Test
