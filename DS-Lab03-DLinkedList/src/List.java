@@ -60,7 +60,7 @@ public interface List<T> {
 	T getPrev();
 
 	// Precondition: NONE.
-	// Postcondition: Returns a copy of the element marked by the cursor and null if
+	// Postcondition: Returns the element marked by the cursor and null if
 	// the list is empty.
 	T getCursor();
 
