@@ -25,9 +25,4 @@ public interface Matrix<T> {
 	 * Bonus of 5 points will be given for implementation in O(1).
 	 */
 	void transpose();
-
-	/**
-	 * @return the a new matrix which is a transpose of the original.
-	 */
-	Matrix<T> getTranspose();
 }
