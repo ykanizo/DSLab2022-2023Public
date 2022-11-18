@@ -3,7 +3,7 @@ public interface List<T> {
 	// Precondition: newElement is not null.
 	// Postcondition: Inserts newElement into the list. If the list is not empty,
 	// then inserts newElement after the cursor. Otherwise, inserts newElement as
-	// the ﬁrst (and only) element in the list. In either case, moves the cursor to
+	// the first (and only) element in the list. In either case, moves the cursor to
 	// newElement.
 	void insert(T newElement);
 
