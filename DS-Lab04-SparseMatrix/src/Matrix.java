@@ -22,7 +22,7 @@ public interface Matrix<T> {
 
 	/**
 	 * Transpose the matrix. 
-	 * Bonus of 5 points will be given for implementation in O(1).
+	 * Should be in O(1).
 	 */
 	void transpose();
 }
