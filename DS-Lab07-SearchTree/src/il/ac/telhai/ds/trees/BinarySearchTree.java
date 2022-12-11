@@ -1,55 +1,64 @@
 package il.ac.telhai.ds.trees;
 
-public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
+public class BinarySearchTree<T extends Comparable<T>> {
 
-	public BinarySearchTree(T value, BinarySearchTree<T> left, BinarySearchTree<T> right) {
-		// TODO add your implementation
+	BstNode root;
+
+	// Binary Search Tree Node
+	class BstNode {
+		T val;
+		BstNode left, right;
+
+		public BstNode(T val) {
+			this.val = val;
+			left = null;
+			right = null;
+		}
 	}
 
-	public BinarySearchTree(T value) {
-		// TODO add your implementation
-	};
+	public enum Direction {
+		LEFT, RIGHT
+	}
+
+	// Returns the val given a path from the root.
+	// Used for testing. DO NOT DELETE.
+	public T getValInPath(Direction... direction) {
+		BstNode node = root;
+		for (Direction d : direction) {
+			if (d.equals(Direction.LEFT) && node.left != null)
+				node = node.left;
+			else if (d.equals(Direction.RIGHT) && node.right != null)
+				node = node.right;
+			else
+				return null;
+		}
+		return node.val;
+	}
 
 	/**
-	 * Adds the object value to the tree as a leaf according to the parameter. If
-	 * the object was in the tree before, then a RuntimeException is thrown.
+	 * Constructs an empty BinarySearchTree.
+	 */
+	public BinarySearchTree() {
+		// Complete this code.
+	}
+
+	/**
+	 * returns the number of elements in the tree
 	 * 
 	 * @param val
 	 */
-	public void add(T val) {
-		// TODO add your implementation
+	public int size() {
+		// Complete this code.
 	}
 
 	/**
-	 * Looks for an object which is equal to the parameter.
+	 * Adds the object value to the tree as a leaf according to the parameter.
 	 * 
-	 * @param val: the object to be looked for in the tree
-	 * @return true if the tree contains this object. Otherwise, return false.
+	 * @param val
+	 * @return True, if the element was added. Otherwise false.
 	 */
-	public boolean contains(T value) {
-		// TODO add your implementation
-	}
-
-	/**
-	 * Looks for the minimal object in the tree, which is greater than or equal to
-	 * the parameter.
-	 * 
-	 * @param val: the object to be looked for in the tree
-	 * @return a reference to the found object.
-	 */
-	public T findGE(T val) {
-		// TODO add your implementation
-	}
-
-	/**
-	 * Looks for the maximal object in the tree, which is smaller than or equal to
-	 * the parameter.
-	 * 
-	 * @param val: the object to be looked for in the tree
-	 * @return a reference to the found object.
-	 */
-	public T findLE(T val) {
-		// TODO add your implementation
+	public boolean add(T val) {
+		// Complete this code.
 	}
 
 	/**
@@ -61,17 +70,28 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
 	 * @return True, if the element was removed. Otherwise false.
 	 */
 	public boolean remove(T val) {
-		// TODO add your implementation
+		// Complete this code.
 	}
 
-	@Override
-	public BinarySearchTree<T> getLeft() {
-		// TODO add your implementation
+	/**
+	 * Looks for an object which is equal to the parameter.
+	 * 
+	 * @param val: the object to be looked for in the tree
+	 * @return true if the tree contains this object. Otherwise, return false.
+	 */
+	public boolean contains(T val) {
+		// Complete this code.
 	}
 
-	@Override
-	public BinarySearchTree<T> getRight() {
-		// TODO add your implementation
+	/**
+	 * Looks for the minimal object in the tree, which is greater than or equal to
+	 * the parameter.
+	 * 
+	 * @param val: the object to be looked for in the tree
+	 * @return a reference to the found object.
+	 */
+	public T findGe(T val) {
+		// Complete this code.
 	}
 
 }
