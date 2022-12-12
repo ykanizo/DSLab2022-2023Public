@@ -44,8 +44,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
 	/**
 	 * returns the number of elements in the tree
-	 * 
-	 * @param val
 	 */
 	public int size() {
 		// Complete this code.
