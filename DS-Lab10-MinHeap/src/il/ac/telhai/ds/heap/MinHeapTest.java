@@ -122,11 +122,11 @@ public class MinHeapTest {
 			
 		}
 		heap.insert(10);
-		assertEquals(new Integer(10), heap.getMin());
+		assertEquals(10, (int) heap.getMin());
 		heap.insert(15);
-		assertEquals(new Integer(10), heap.getMin());
+		assertEquals(10, (int) heap.getMin());
 		heap.insert(5);
-		assertEquals(new Integer(5), heap.getMin());
+		assertEquals(5, (int) heap.getMin());
 	}
 
 	@Test
@@ -136,11 +136,11 @@ public class MinHeapTest {
 		heap.insert(15);
 		heap.insert(5);
 		assertEquals("[5,15,10]", heap.toString());
-		assertEquals(new Integer(5), heap.deleteMin());
+		assertEquals(5, (int) heap.deleteMin());
 		assertEquals("[10,15]", heap.toString());
-		assertEquals(new Integer(10), heap.deleteMin());
+		assertEquals(10, (int) heap.deleteMin());
 		assertEquals("[15]", heap.toString());
-		assertEquals(new Integer(15), heap.deleteMin());
+		assertEquals(15, (int) heap.deleteMin());
 		assertEquals("[]", heap.toString());
         assertNull(heap.deleteMin());
 	}
@@ -171,4 +171,5 @@ public class MinHeapTest {
 		assertEquals("[]", heap.toString());
         assertNull(heap.deleteMin());
 	}
+
 }
