@@ -149,27 +149,26 @@ public class MinHeapTest {
 	public void testDeleteMinComplex() {
 		MinHeap<Integer> heap = new MinHeap<Integer>(arr);
 		assertEquals("[1,2,4,3,6,5,8,10,7,9]", heap.toString());
-		assertEquals(new Integer(1), heap.deleteMin());
+		assertEquals(1, (int) heap.deleteMin());
 		assertEquals("[2,3,4,7,6,5,8,10,9]", heap.toString());
-		assertEquals(new Integer(2), heap.deleteMin());
+		assertEquals(2, (int) heap.deleteMin());
 		assertEquals("[3,6,4,7,9,5,8,10]", heap.toString());
-		assertEquals(new Integer(3), heap.deleteMin());
+		assertEquals(3, (int) heap.deleteMin());
 		assertEquals("[4,6,5,7,9,10,8]", heap.toString());
-		assertEquals(new Integer(4), heap.deleteMin());
+		assertEquals(4, (int) heap.deleteMin());
 		assertEquals("[5,6,8,7,9,10]", heap.toString());
-		assertEquals(new Integer(5), heap.deleteMin());
+		assertEquals(5, (int) heap.deleteMin());
 		assertEquals("[6,7,8,10,9]", heap.toString());
-		assertEquals(new Integer(6), heap.deleteMin());
+		assertEquals(6, (int) heap.deleteMin());
 		assertEquals("[7,9,8,10]", heap.toString());
-		assertEquals(new Integer(7), heap.deleteMin());
+		assertEquals(7, (int) heap.deleteMin());
 		assertEquals("[8,9,10]", heap.toString());
-		assertEquals(new Integer(8), heap.deleteMin());
+		assertEquals(8, (int) heap.deleteMin());
 		assertEquals("[9,10]", heap.toString());
-		assertEquals(new Integer(9), heap.deleteMin());
+		assertEquals(9, (int) heap.deleteMin());
 		assertEquals("[10]", heap.toString());
-		assertEquals(new Integer(10), heap.deleteMin());
+		assertEquals(10, (int) heap.deleteMin());
 		assertEquals("[]", heap.toString());
         assertNull(heap.deleteMin());
 	}
-
 }
