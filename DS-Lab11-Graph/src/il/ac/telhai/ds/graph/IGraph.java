@@ -27,8 +27,7 @@ public interface IGraph<V extends Comparable<V>, E> {
 	public boolean containsVertex(V v);
 
 	/**
-	 * Remove the vertex and its edges from the graph, and return its incidents. If
-	 * the vertex dosn't exit return null.
+	 * Remove the vertex and its edges from the graph.
 	 */
 	public void removeVertex(V v);
 
